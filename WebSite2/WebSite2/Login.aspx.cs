@@ -82,13 +82,10 @@ public partial class Login : System.Web.UI.Page
                 {
                     typestored = value.ToString();
                 }
-
                 if (value2 != null)
                 {
                     fnstored = value2.ToString();
                 }
-
-
                 if (typestored == "Administrator")
                 {
                     Session["Username"] = TBuser.Text.Trim();
@@ -99,12 +96,10 @@ public partial class Login : System.Web.UI.Page
                     {
                         Response.Redirect("Reset.aspx");
                     }
-
                     else
                     {
                         Response.Redirect("Verification.aspx");
-                    }
-                   
+                    }                   
                 }
 
                 else
@@ -125,8 +120,6 @@ public partial class Login : System.Web.UI.Page
                     
                 }
             }
-
-
             
             else
             {

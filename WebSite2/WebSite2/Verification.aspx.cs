@@ -25,7 +25,9 @@ public partial class Verification : System.Web.UI.Page
     int guest = 1;
     string sessionname;
     string EmailCode;
+    string smsCode;
     string codecheck;
+   string SMSNum;
     private SqlCommand cmd;
 
 
@@ -184,10 +186,74 @@ public partial class Verification : System.Web.UI.Page
 
     protected void BTNsms_Click(object sender, EventArgs e)
     {
+        Random random = new Random();
+        smsCode = random.Next(10001, 99999).ToString();
 
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+
+            string insert = "UPDATE FinalTable SET VCode = @code WHERE Username = @Username";
+            cmd = new SqlCommand(insert, conn);
+
+            {
+                cmd.Parameters.AddWithValue("@Username", Tb1.Text.Trim());
+                cmd.Parameters.AddWithValue("@code", smsCode);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+
+        sendSMSCode();
+
+        
     }
 
-    protected void BTNreset_Click(object sender, EventArgs e)
+    private void sendSMSCode()
+    {
+
+        String result;
+        string apiKey = "r0rALrJVcpw-xCoEGyy51eScRdDLcFzpGGcsTLLNz7";
+        string numbers = "63" + LBL_Contact.Text; // in a comma seperated list
+        string message = "Your OTP Number is " + efdwxsfqazscax + "\n\n(Sent By : CPLCTV3 Two-Way Authentication Group)";
+        string sender = "CPLCTV3";
+
+        String url = "https://api.txtlocal.com/send/?apikey=" + apiKey + "&numbers=" + numbers + "&message=" + message + "&sender=" + sender;
+        //refer to parameters to complete correct url string
+
+        StreamWriter myWriter = null;
+        HttpWebRequest objRequest = (HttpWebRequest)WebRequest.Create(url);
+
+        objRequest.Method = "POST";
+        objRequest.ContentLength = Encoding.UTF8.GetByteCount(url);
+        objRequest.ContentType = "application/x-www-form-urlencoded";
+        try
+        {
+            myWriter = new StreamWriter(objRequest.GetRequestStream());
+            myWriter.Write(url);
+        }
+        catch (Exception e)
+        {
+
+        }
+        finally
+        {
+            myWriter.Close();
+        }
+
+        HttpWebResponse objResponse = (HttpWebResponse)objRequest.GetResponse();
+        using (StreamReader sr = new StreamReader(objResponse.GetResponseStream()))
+        {
+            result = sr.ReadToEnd();
+            // Close and clean up the StreamReader
+            sr.Close();
+        }
+        //result;
+    }
+
+
+protected void BTNreset_Click(object sender, EventArgs e)
     {
         LBL.Text = "";
         BTNemail.Visible = true;
