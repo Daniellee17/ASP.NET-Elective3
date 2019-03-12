@@ -206,8 +206,13 @@ public partial class Verification : System.Web.UI.Page
         }
 
         sendSMSCode();
+        BTNemail.Visible = false;
+        BTNsms.Visible = false;
 
-        
+        BTNreset.Visible = true;
+        BTNsubmit.Visible = true;
+        TBverify.Visible = true;
+
     }
 
     private void sendSMSCode()
@@ -216,7 +221,7 @@ public partial class Verification : System.Web.UI.Page
         String result;
         string apiKey = "r0rALrJVcpw-xCoEGyy51eScRdDLcFzpGGcsTLLNz7";
         string numbers = "63" + LBL_Contact.Text; // in a comma seperated list
-        string message = "Your OTP Number is " + efdwxsfqazscax + "\n\n(Sent By : CPLCTV3 Two-Way Authentication Group)";
+        string message = "Your OTP Number is " + smsCode + "\n\n(Sent By : CPLCTV3 Two-Way Authentication Group)";
         string sender = "CPLCTV3";
 
         String url = "https://api.txtlocal.com/send/?apikey=" + apiKey + "&numbers=" + numbers + "&message=" + message + "&sender=" + sender;
