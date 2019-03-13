@@ -115,6 +115,7 @@ public partial class Registration : System.Web.UI.Page
 
                     sqlCmd.ExecuteNonQuery();
                     clear();
+                    LBL.ForeColor = System.Drawing.Color.Green;
                     LBL.Text = "Registration Successful!";
                 }
 

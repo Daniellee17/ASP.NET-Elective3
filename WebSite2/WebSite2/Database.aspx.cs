@@ -113,7 +113,7 @@ public partial class Database : System.Web.UI.Page
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    string query = "INSERT INTO FinalTable (FirstName,LastName,Username,Contact,Email,Password,Type,Verified) VALUES (@FirstName,@LastName,@Username,@Contact,@Email,@Password,@Type,@Verified)";
+                    string query = "INSERT INTO FinalTable (FirstName,LastName,Username,Contact,Email,Type,Verified) VALUES (@FirstName,@LastName,@Username,@Contact,@Email,@Type,@Verified)";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
 
                     sqlCmd.Parameters.AddWithValue("@FirstName", (gvUsers.FooterRow.FindControl("txtFirstNameFooter") as TextBox).Text.Trim());
@@ -121,7 +121,7 @@ public partial class Database : System.Web.UI.Page
                     sqlCmd.Parameters.AddWithValue("@Contact", (gvUsers.FooterRow.FindControl("txtContactFooter") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Username", (gvUsers.FooterRow.FindControl("txtUsernameFooter") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Email", (gvUsers.FooterRow.FindControl("txtEmailFooter") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Password", (gvUsers.FooterRow.FindControl("txtPasswordFooter") as TextBox).Text.Trim());
+                  //  sqlCmd.Parameters.AddWithValue("@Password", (gvUsers.FooterRow.FindControl("txtPasswordFooter") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Type", (gvUsers.FooterRow.FindControl("txtTypeFooter") as TextBox).Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Verified", (gvUsers.FooterRow.FindControl("txtVerifiedFooter") as TextBox).Text.Trim());
 
@@ -164,7 +164,7 @@ public partial class Database : System.Web.UI.Page
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();
-                string query = "UPDATE FinalTable SET FirstName=@FirstName,LastName=@LastName,Username=@Username,Contact=@Contact,Email=@Email,Password=@Password,Type=@Type,Verified=@Verified WHERE UserID=@id";
+                string query = "UPDATE FinalTable SET FirstName=@FirstName,LastName=@LastName,Username=@Username,Contact=@Contact,Email=@Email,Type=@Type,Verified=@Verified WHERE UserID=@id";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
 
                 sqlCmd.Parameters.AddWithValue("@FirstName", (gvUsers.Rows[e.RowIndex].FindControl("txtFirstName") as TextBox).Text.Trim());
@@ -172,7 +172,7 @@ public partial class Database : System.Web.UI.Page
                 sqlCmd.Parameters.AddWithValue("@Contact", (gvUsers.Rows[e.RowIndex].FindControl("txtContact") as TextBox).Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Username", (gvUsers.Rows[e.RowIndex].FindControl("txtUsername") as TextBox).Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Email", (gvUsers.Rows[e.RowIndex].FindControl("txtEmail") as TextBox).Text.Trim());
-                sqlCmd.Parameters.AddWithValue("@Password", (gvUsers.Rows[e.RowIndex].FindControl("txtPassword") as TextBox).Text.Trim());
+               // sqlCmd.Parameters.AddWithValue("@Password", (gvUsers.Rows[e.RowIndex].FindControl("txtPassword") as TextBox).Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Type", (gvUsers.Rows[e.RowIndex].FindControl("txtType") as TextBox).Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Verified", (gvUsers.Rows[e.RowIndex].FindControl("txtVerified") as TextBox).Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(gvUsers.DataKeys[e.RowIndex].Value.ToString()));

@@ -309,17 +309,7 @@
                         </FooterTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="PASSWORD">
-                        <ItemTemplate>
-                            <asp:Label Text='<%# Eval("Password") %>' runat="server" />
-                        </ItemTemplate>
-                        <EditItemTemplate>
-                            <asp:TextBox ID="txtPassword" Text='<%# Eval("Password") %>' runat="server" />
-                        </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="txtPasswordFooter" runat="server" />
-                        </FooterTemplate>
-                    </asp:TemplateField>
+    
 
                     <asp:TemplateField HeaderText="TYPE">
                         <ItemTemplate>
