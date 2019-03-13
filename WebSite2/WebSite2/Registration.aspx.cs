@@ -128,7 +128,6 @@ public partial class Registration : System.Web.UI.Page
 
 
 
-
     protected void LB_my_Click(object sender, EventArgs e)
     {
         if (guest == 1)

@@ -11,6 +11,7 @@ public partial class AdminPage1 : System.Web.UI.Page
 {
     string connectionString = @"Data Source=MSI-DANE;Initial Catalog=ageDB;Integrated Security=True;";
     int admin = 0;
+    int loggedin = 0;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -20,10 +21,13 @@ public partial class AdminPage1 : System.Web.UI.Page
       
         if (Session["Username"] != null)
         {
-           
+            loggedin = 1;
+
+            LB_reg.Text = "Experiments";
             LBL_FullName1.Text = LBL_Contact1.Text = LBL_Email1.Text = LBL_Password1.Text = LBL_Type1.Text = LBL_Username1.Text = LBL_Verified1.Text = "User not found";
             if (Session["Type"] == "Administrator")
             {
+                
                 admin = 1;
                 LblName.Text = "Welcome, " + " Admin " + Session["FirstName"] + "!";
             }
@@ -163,7 +167,16 @@ public partial class AdminPage1 : System.Web.UI.Page
 
     protected void LB_reg_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Registration.aspx");
+        if(loggedin == 1)
+        {
+            Response.Redirect("Experiments.aspx");
+        }
+
+        else
+        {
+            Response.Redirect("Registration.aspx");
+        }
+      
     }
 
     protected void LB_home_Click(object sender, EventArgs e)
@@ -171,7 +184,9 @@ public partial class AdminPage1 : System.Web.UI.Page
         Response.Redirect("Home.aspx");
     }
 
-    
+ 
+
+
 
     protected void BTN_Back_Click(object sender, EventArgs e)
     {

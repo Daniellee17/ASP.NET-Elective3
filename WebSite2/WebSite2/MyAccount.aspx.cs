@@ -11,20 +11,18 @@ public partial class MyAccount : System.Web.UI.Page
 {
     string connectionString = @"Data Source=MSI-DANE;Initial Catalog=ageDB;Integrated Security=True;";
     int admin = 0;
+    int loggedin = 0;
 
     protected void Page_Load(object sender, EventArgs e)
     {
 
-
-
         this.UnobtrusiveValidationMode =
             System.Web.UI.UnobtrusiveValidationMode.None;
 
-
-
         if (Session["Username"] != null)
         {
-
+            loggedin = 1;
+            LB_reg.Text = "Experiments";
             Tb1.Text = Session["Username"].ToString();
 
             if (Session["Type"] == "Administrator")
@@ -144,7 +142,15 @@ public partial class MyAccount : System.Web.UI.Page
 
     protected void LB_reg_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Registration.aspx");
+        if (loggedin == 1)
+        {
+            Response.Redirect("Experiments.aspx");
+        }
+
+        else
+        {
+            Response.Redirect("Registration.aspx");
+        }
     }
 
     protected void LB_home_Click(object sender, EventArgs e)
@@ -220,7 +226,11 @@ public partial class MyAccount : System.Web.UI.Page
 
     }
 
- 
+    protected void LB_experiments_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Experiments.aspx");
+    }
+
 
     protected void BTNchange_Click(object sender, EventArgs e)
     {

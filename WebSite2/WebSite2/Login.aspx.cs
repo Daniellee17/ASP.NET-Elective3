@@ -13,12 +13,20 @@ public partial class Login : System.Web.UI.Page
     string typestored;
     string fnstored;
     int guest = 0;
+    int loggedin = 0;
+
     protected void Page_Load(object sender, EventArgs e)
     {
-      
-        LBLerror.Text = " ";
+
+        this.UnobtrusiveValidationMode =
+            System.Web.UI.UnobtrusiveValidationMode.None;
+
+        LBLerror.Text = "";
+
         if (Session["Username"] != null)
         {
+            loggedin = 1;
+            LB_reg.Text = "Experiments";
             if (Session["Type"] == "Administrator")
             {
                 admin = 1;
@@ -94,11 +102,13 @@ public partial class Login : System.Web.UI.Page
 
                     if(value3.ToString() == "reset")
                     {
+                        Session["Rst"] = "Yes";
                         Response.Redirect("Reset.aspx");
                     }
                     else
                     {
-                        Response.Redirect("Verification.aspx");
+                       Response.Redirect("Home.aspx");
+                       //Response.Redirect("Verification.aspx");
                     }                   
                 }
 
@@ -110,12 +120,14 @@ public partial class Login : System.Web.UI.Page
 
                     if (value3.ToString() == "reset")
                     {
+                        Session["Rst"] = "Yes";
                         Response.Redirect("Reset.aspx");
                     }
 
                     else
                     {
-                        Response.Redirect("Verification.aspx");
+                        Response.Redirect("Home.aspx");
+                        //Response.Redirect("Verification.aspx");
                     }
                     
                 }
@@ -130,7 +142,7 @@ public partial class Login : System.Web.UI.Page
     }
 
 
-   
+
 
     protected void LB_login_Click(object sender, EventArgs e)
     {
@@ -141,7 +153,15 @@ public partial class Login : System.Web.UI.Page
 
     protected void LB_reg_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Registration.aspx");
+        if (loggedin == 1)
+        {
+            Response.Redirect("Experiments.aspx");
+        }
+
+        else
+        {
+            Response.Redirect("Registration.aspx");
+        }
     }
 
     protected void LB_home_Click(object sender, EventArgs e)

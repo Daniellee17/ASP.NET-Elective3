@@ -22,6 +22,12 @@ public partial class Reset : System.Web.UI.Page
             System.Web.UI.UnobtrusiveValidationMode.None;
 
 
+        if (Session["Rst"] != null)
+        {
+
+            BTN_Back.Visible = false;
+
+        }
 
         if (Session["Username"] != null)
         {
@@ -119,6 +125,7 @@ public partial class Reset : System.Web.UI.Page
                         sqlCmd.Parameters.AddWithValue("@Username", Tb1.Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@Password", TBpass.Text.Trim());
                         sqlCmd.ExecuteNonQuery();
+                        Session["Rst"] = null;
                         Response.Redirect("MyAccount.aspx");
 
                     }
@@ -144,5 +151,12 @@ public partial class Reset : System.Web.UI.Page
             LBL.Text = "You are not logged in!";
         }
         
+    }
+
+
+
+    protected void BTN_Back_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MyAccount.aspx");
     }
 }

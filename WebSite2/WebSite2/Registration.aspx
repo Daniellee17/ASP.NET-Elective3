@@ -161,8 +161,8 @@
             color: aliceblue;
         }
 
-    
-      nav {
+
+        nav {
             top: 0;
             left: 0;
             width: 100%;
@@ -217,30 +217,28 @@
 <body>
     <form id="form1" runat="server">
 
-       <nav>
-
+        <nav>
             <div class="brand">
                 <h2>
                     <asp:Label ID="LblName" runat="server" Text=" " ForeColor="White" Font-Bold="false"></asp:Label>
                 </h2>
             </div>
-
             <ul>
                 <li><a>
                     <asp:LinkButton ID="LB_home" runat="server" OnClick="LB_home_Click">HOME</asp:LinkButton>
                 </a></li>
                 <li><a>
-                    <asp:LinkButton ID="LB_my" runat="server" OnClick="LB_my_Click" >MY ACCOUNT</asp:LinkButton>
+                    <asp:LinkButton ID="LB_my" runat="server" OnClick="LB_my_Click">MY ACCOUNT</asp:LinkButton>
                 </a></li>
                 <li><a>
-                    <asp:LinkButton ID="LB_reg" runat="server" OnClick="LB_reg_Click" Style="color: #31BDC9">REGISTER</asp:LinkButton>
+                    <asp:LinkButton ID="LB_reg" runat="server" OnClick="LB_reg_Click" Text="REGISTER" Style="color: #31BDC9"> </asp:LinkButton>
                 </a></li>
                 <li><a>
                     <asp:LinkButton ID="LB_login" runat="server" OnClick="LB_login_Click" Text="Login"></asp:LinkButton>
                 </a></li>
             </ul>
-
         </nav>
+
 
 
 
@@ -254,7 +252,7 @@
 
 
 
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid Email Address!" 
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid Email Address!"
                 ControlToValidate="TBemail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
 
 
@@ -264,7 +262,7 @@
 
 
 
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Min. of 8, must be alphanumeric with special chars." 
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Min. of 8, must be alphanumeric with special chars."
                 ControlToValidate="TBpass" ValidationExpression="^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"></asp:RegularExpressionValidator>
 
 
@@ -306,7 +304,8 @@
                 <asp:CheckBox ID="CheckBox1" runat="server" />
                 I have read and agree to the <a class="image-link" style="color: #31BDC9; font-family: sans-serif; font-size: 14px" href="images/tac.jpg">terms of service</a>
 
-            </div> <br />
+            </div>
+            <br />
 
             <asp:Button ID="BTNsubmit" runat="server" OnClick="BTNsubmit_Click" Text="Submit" />
 

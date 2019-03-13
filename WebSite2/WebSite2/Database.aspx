@@ -111,6 +111,23 @@
 
 
 
+    
+        .generalLabel {
+            top: 11%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            box-sizing: border-box;
+            padding: 70px 30px;
+            font-family: sans-serif;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 16px;
+            color: aliceblue;
+        }
+
         nav {
             top: 0;
             left: 0;
@@ -161,37 +178,17 @@
         ul li a:hover {
             color: #262626;
         }
-
-        .generalLabel {
-            top: 11%;
-            left: 50%;
-            position: absolute;
-            transform: translate(-50%,-50%);
-            box-sizing: border-box;
-            padding: 70px 30px;
-            font-family: sans-serif;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            font-family: sans-serif;
-            font-size: 16px;
-            color: aliceblue;
-        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
 
         <nav>
-
-
             <div class="brand">
-
                 <h2>
                     <asp:Label ID="LblName" runat="server" Text=" " ForeColor="White" Font-Bold="false"></asp:Label>
                 </h2>
             </div>
-
             <ul>
                 <li><a>
                     <asp:LinkButton ID="LB_home" runat="server" OnClick="LB_home_Click">HOME</asp:LinkButton>
@@ -199,17 +196,15 @@
                 <li><a>
                     <asp:LinkButton ID="LB_my" runat="server" OnClick="LB_my_Click">MY ACCOUNT</asp:LinkButton>
                 </a></li>
-
                 <li><a>
-                    <asp:LinkButton ID="LB_reg" runat="server" OnClick="LB_reg_Click">REGISTER</asp:LinkButton>
+                    <asp:LinkButton ID="LB_reg" runat="server" OnClick="LB_reg_Click" Text="REGISTER"> </asp:LinkButton>
                 </a></li>
-
                 <li><a>
                     <asp:LinkButton ID="LB_login" runat="server" OnClick="LB_login_Click" Text="Login"></asp:LinkButton>
                 </a></li>
             </ul>
-
         </nav>
+
         <div class="buttonDane">
             <asp:Button ID="BTN_Back" runat="server" Text="BACK" OnClick="BTN_Back_Click" />
         </div>

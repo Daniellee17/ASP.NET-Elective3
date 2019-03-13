@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Experiments.aspx.cs" Inherits="Experiments" %>
 
 <!DOCTYPE html>
 
@@ -50,8 +50,6 @@
             font-size: 18px;
             color: red;
         }
-
-
 
 
         nav {
@@ -117,13 +115,13 @@
             </div>
             <ul>
                 <li><a>
-                    <asp:LinkButton ID="LB_home" runat="server" OnClick="LB_home_Click" Style="color: #31BDC9">HOME</asp:LinkButton>
+                    <asp:LinkButton ID="LB_home" runat="server" OnClick="LB_home_Click">HOME</asp:LinkButton>
                 </a></li>
                 <li><a>
                     <asp:LinkButton ID="LB_my" runat="server" OnClick="LB_my_Click">MY ACCOUNT</asp:LinkButton>
                 </a></li>
                 <li><a>
-                    <asp:LinkButton ID="LB_reg" runat="server" OnClick="LB_reg_Click" Text="REGISTER"> </asp:LinkButton>
+                    <asp:LinkButton ID="LB_reg" runat="server" OnClick="LB_reg_Click" Text="REGISTER" Style="color: #31BDC9"> </asp:LinkButton>
                 </a></li>
                 <li><a>
                     <asp:LinkButton ID="LB_login" runat="server" OnClick="LB_login_Click" Text="Login"></asp:LinkButton>

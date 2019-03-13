@@ -12,6 +12,29 @@
             background-size: cover;
         }
 
+        
+        .buttonDane input[type="submit"] {
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: none;
+            height: 33px;
+            width: 68px;
+            left: 0%;
+            position: absolute;
+            background: rgba(0,0,0,0.3);
+            color: #fff;
+            font-size: 14px;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+            .buttonDane input[type="submit"]:hover {
+                cursor: pointer;
+                color: #262626;
+                transition: .3s;
+            }
+
         .resetBox {
             width: 550px;
             height: 570px;
@@ -141,6 +164,13 @@
 
 
         <asp:HiddenField ID="hfUserID" runat="server" />
+
+         <div class="buttonDane">
+
+            <asp:Button ID="BTN_Back" runat="server" Text="BACK" OnClick="BTN_Back_Click" />
+
+        </div>
+
 
         <div class="resetBox">
             <h1>UPDATE PASSWORD</h1>

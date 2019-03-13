@@ -258,7 +258,7 @@ public partial class Verification : System.Web.UI.Page
     }
 
 
-protected void BTNreset_Click(object sender, EventArgs e)
+    protected void BTNreset_Click(object sender, EventArgs e)
     {
         LBL.Text = "";
         BTNemail.Visible = true;

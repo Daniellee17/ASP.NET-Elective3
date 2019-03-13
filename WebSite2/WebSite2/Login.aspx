@@ -126,6 +126,7 @@
 
 
 
+     
         nav {
             top: 0;
             left: 0;
@@ -163,7 +164,7 @@
                         display: block;
                         height: 32px;
                         line-height: 0px;
-                        padding: 0 13px;
+                        padding: 0 16px;
                         box-sizing: border-box;
                         color: #fff;
                         text-decoration: none;
@@ -182,14 +183,11 @@
     <form id="form1" runat="server">
 
         <nav>
-
             <div class="brand">
-
                 <h2>
                     <asp:Label ID="LblName" runat="server" Text=" " ForeColor="White" Font-Bold="false"></asp:Label>
                 </h2>
             </div>
-
             <ul>
                 <li><a>
                     <asp:LinkButton ID="LB_home" runat="server" OnClick="LB_home_Click">HOME</asp:LinkButton>
@@ -197,17 +195,13 @@
                 <li><a>
                     <asp:LinkButton ID="LB_my" runat="server" OnClick="LB_my_Click">MY ACCOUNT</asp:LinkButton>
                 </a></li>
-
                 <li><a>
-                    <asp:LinkButton ID="LB_reg" runat="server" OnClick="LB_reg_Click">REGISTER</asp:LinkButton>
+                    <asp:LinkButton ID="LB_reg" runat="server" OnClick="LB_reg_Click" Text="REGISTER"> </asp:LinkButton>
                 </a></li>
-
                 <li><a>
                     <asp:LinkButton ID="LB_login" runat="server" OnClick="LB_login_Click" Text="Login" Style="color: #31BDC9"></asp:LinkButton>
-
                 </a></li>
             </ul>
-
         </nav>
 
 
