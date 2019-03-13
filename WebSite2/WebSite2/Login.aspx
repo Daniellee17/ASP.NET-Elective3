@@ -17,8 +17,6 @@
         }
 
 
-
-
         body {
             margin: 0;
             padding: 0;
@@ -126,7 +124,7 @@
 
 
 
-     
+
         nav {
             top: 0;
             left: 0;
@@ -199,8 +197,8 @@
                     <asp:LinkButton ID="LB_reg" runat="server" OnClick="LB_reg_Click" Text="REGISTER"> </asp:LinkButton>
                 </a></li>
 
-                
-                  <li><a>
+
+                <li><a>
                     <asp:LinkButton ID="LB_contact" runat="server" OnClick="LB_contact_Click" Text="CONTACT"> </asp:LinkButton>
                 </a></li>
 
