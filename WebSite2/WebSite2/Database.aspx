@@ -199,6 +199,12 @@
                 <li><a>
                     <asp:LinkButton ID="LB_reg" runat="server" OnClick="LB_reg_Click" Text="REGISTER"> </asp:LinkButton>
                 </a></li>
+
+                
+                  <li><a>
+                    <asp:LinkButton ID="LB_contact" runat="server" OnClick="LB_contact_Click" Text="CONTACT"> </asp:LinkButton>
+                </a></li>
+
                 <li><a>
                     <asp:LinkButton ID="LB_login" runat="server" OnClick="LB_login_Click" Text="Login"></asp:LinkButton>
                 </a></li>

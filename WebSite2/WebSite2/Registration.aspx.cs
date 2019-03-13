@@ -193,6 +193,11 @@ public partial class Registration : System.Web.UI.Page
         }
     }
 
+    protected void LB_contact_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Contact.aspx");
+    }
+
 
 
     protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)

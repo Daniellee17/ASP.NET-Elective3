@@ -153,6 +153,13 @@ public partial class MyAccount : System.Web.UI.Page
         }
     }
 
+    protected void LB_contact_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Contact.aspx");
+    }
+
+
+
     protected void LB_home_Click(object sender, EventArgs e)
     {
         Response.Redirect("Home.aspx");

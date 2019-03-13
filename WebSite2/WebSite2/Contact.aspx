@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Contact.aspx.cs" Inherits="Contact" %>
 
 <!DOCTYPE html>
 
@@ -16,19 +16,25 @@
             font-family: bunge;
         }
 
-
-
-
         body {
-            margin: 0;
-            padding: 0;
             background: url(images/bg3.png);
             background-size: cover;
         }
 
-        .loginBox {
-            width: 320px;
-            height: 410px;
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            width: 70%;
+        }
+
+        .contactBox {
+            width: 510px;
+            height: 360px;
             background: rgba(0, 0, 0, 0.4);
             color: #fff;
             top: 50%;
@@ -57,18 +63,19 @@
             font-size: 19px;
         }
 
-        .loginBox p {
+        .contactBox p {
             margin: 0;
             padding: 0;
-            font-size: 14px;
+            font-size: 12px;
+             color: #31BDC9;
         }
 
-        .loginBox input {
+        .contactBox input {
             width: 100%;
             margin-bottom: 20px;
         }
 
-            .loginBox input[type="text"], input[type="password"] {
+            .contactBox input[type="text"], input[type="password"] {
                 border: none;
                 border-bottom: 1px solid #fff;
                 background: transparent;
@@ -78,7 +85,7 @@
                 font-size: 13px;
             }
 
-            .loginBox input[type="submit"] {
+            .contactBox input[type="submit"] {
                 border: none;
                 outline: none;
                 height: 40px;
@@ -88,27 +95,26 @@
                 border-radius: 20px;
             }
 
-                .loginBox input[type="submit"]:hover {
+                .contactBox input[type="submit"]:hover {
                     cursor: pointer;
                     background: #39dc79;
                     color: #000;
                 }
 
-        .loginBox a {
+        .contactBox a {
             text-decoration: none;
-            font-size: 14px;
+            font-size: 12px;
             color: #fff;
         }
 
-            .loginBox a:hover {
+            .contactBox a:hover {
                 color: #39dc79;
             }
 
 
-
-
+        
         .generalLabel {
-            top: 74%;
+              top: 71%;
             left: 50%;
             position: absolute;
             transform: translate(-50%,-50%);
@@ -119,14 +125,13 @@
             margin-right: auto;
             text-align: center;
             font-family: sans-serif;
-            font-size: 16px;
+            font-size: 18px;
             color: red;
         }
 
 
 
 
-     
         nav {
             top: 0;
             left: 0;
@@ -199,42 +204,57 @@
                     <asp:LinkButton ID="LB_reg" runat="server" OnClick="LB_reg_Click" Text="REGISTER"> </asp:LinkButton>
                 </a></li>
 
-                
                   <li><a>
-                    <asp:LinkButton ID="LB_contact" runat="server" OnClick="LB_contact_Click" Text="CONTACT"> </asp:LinkButton>
+                    <asp:LinkButton ID="LB_contact" runat="server" OnClick="LB_contact_Click" Text="CONTACT"  Style="color: #31BDC9"> </asp:LinkButton>
                 </a></li>
 
+
                 <li><a>
-                    <asp:LinkButton ID="LB_login" runat="server" OnClick="LB_login_Click" Text="Login" Style="color: #31BDC9"></asp:LinkButton>
+                    <asp:LinkButton ID="LB_login" runat="server" OnClick="LB_login_Click" Text="Login"></asp:LinkButton>
                 </a></li>
             </ul>
         </nav>
 
 
+
+         <div class="contactBox">
+            <img src="images/phone.png" class="avatar" />
+            <h1>CONTACT US</h1>
+
+            
+            <p>Company</p>
+            <asp:Label ID="LBL_Name" runat="server" Text="A.G.E" Font-Size="16px"></asp:Label><br />
+            <br />
+
+            <p>Address</p>
+            <asp:Label ID="LBL_Address" runat="server" Text="East Tower, One Archers Place, Taft Avenue, Malate Manile" Font-Size="16px"></asp:Label><br />
+            <br />
+
+            <p>Contact Number</p>
+            <asp:Label ID="LBL_Contact" runat="server" Text="+639985333809" Font-Size="16px"></asp:Label><br />
+            <br />
+
+            <p>Email</p>
+            <asp:Label ID="LBL_Email" runat="server" Text="danielleespiritu17@gmail.com" Font-Size="16px"></asp:Label><br />
+            <br />
+
+
+
+
+
+
+
+
+
+        </div>
+       
         <div class="generalLabel">
-            <asp:Label ID="LBLerror" runat="server" Text=" "></asp:Label>
-        </div>
 
-        <div class="loginBox">
-            <img src="images/login2.jpg" class="avatar" />
-            <h1>LOGIN</h1>
-
-            <p>Username</p>
-            <asp:TextBox ID="TBuser" runat="server" placeholder="Enter Username"></asp:TextBox>
-            <p>Password</p>
-            <asp:TextBox ID="TBpass" runat="server" TextMode="Password" placeholder="Enter Password"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
-
-
-
-            <a href="Registration.aspx">Don't have an account?</a>
+            <asp:Label ID="LBLerror" runat="server" Text=""></asp:Label>
 
 
 
         </div>
-
     </form>
 </body>
 </html>

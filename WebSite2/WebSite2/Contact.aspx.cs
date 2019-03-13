@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Experiments : System.Web.UI.Page
+public partial class Contact : System.Web.UI.Page
 {
     int admin = 0;
     int guest = 0;
@@ -44,7 +44,6 @@ public partial class Experiments : System.Web.UI.Page
             LB_login.Text = "Login";
         }
     }
-
 
 
     protected void LB_login_Click(object sender, EventArgs e)
@@ -105,11 +104,6 @@ public partial class Experiments : System.Web.UI.Page
             LBLerror.Text = "You don't have admin privelages!";
         }
 
-    }
-
-    protected void LB_experiments_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("Experiments.aspx");
     }
 
 

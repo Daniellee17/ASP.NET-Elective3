@@ -220,6 +220,11 @@ public partial class Database : System.Web.UI.Page
 
 
 
+    protected void LB_contact_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Contact.aspx");
+    }
+
 
 
 

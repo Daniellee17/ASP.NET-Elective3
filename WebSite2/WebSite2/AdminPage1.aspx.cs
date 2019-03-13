@@ -151,6 +151,12 @@ public partial class AdminPage1 : System.Web.UI.Page
 
     }
 
+    protected void LB_contact_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Contact.aspx");
+    }
+
+
 
     protected void LB_my_Click(object sender, EventArgs e)
     {
