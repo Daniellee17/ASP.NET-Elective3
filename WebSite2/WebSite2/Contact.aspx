@@ -66,7 +66,7 @@
         .contactBox p {
             margin: 0;
             padding: 0;
-            font-size: 12px;
+            font-size: 13px;
              color: #31BDC9;
         }
 
