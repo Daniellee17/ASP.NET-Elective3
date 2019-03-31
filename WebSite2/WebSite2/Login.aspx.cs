@@ -54,7 +54,7 @@ public partial class Login : System.Web.UI.Page
 
     protected void btnLogin_Click(object sender, EventArgs e)
     {
-        using (SqlConnection sqlCon = new SqlConnection(@"Data Source=MSI-DANE;Initial Catalog=ageDB;Integrated Security=True;"))
+        using (SqlConnection sqlCon = new SqlConnection(@"Data Source=MSI-DANE;Initial Catalog=ageDB;Integrated Security=True"))
         {
             sqlCon.Open();
             string query = "SELECT COUNT(1) FROM FinalTable WHERE Username=@Username AND Password=@Password AND Verified='Yes'";
