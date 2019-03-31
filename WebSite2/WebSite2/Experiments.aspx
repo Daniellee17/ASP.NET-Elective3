@@ -51,6 +51,21 @@
             color: red;
         }
 
+        .generalLabel2 {
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            box-sizing: border-box;
+            padding: 70px 30px;
+            font-family: sans-serif;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 40px;
+            color: white;
+        }
 
         nav {
             top: 0;
@@ -141,6 +156,14 @@
         <div class="generalLabel">
 
             <asp:Label ID="LBLerror" runat="server" Text=""></asp:Label>
+
+
+
+        </div>
+
+                <div class="generalLabel2">
+
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 
 
 

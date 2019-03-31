@@ -25,12 +25,14 @@ public partial class Experiments : System.Web.UI.Page
             {
                 admin = 1;
                 LblName.Text = "Welcome, " + " Admin " + Session["FirstName"] + "!";
+                Label1.Text = "ADMIN EXPERIMENT PAGE";
             }
 
             else
             {
                 admin = 0;
                 LblName.Text = "Welcome, " + Session["FirstName"] + "!";
+                Label1.Text = "USER EXPERIMENT PAGE";
 
             }
             LB_login.Text = "Logout";

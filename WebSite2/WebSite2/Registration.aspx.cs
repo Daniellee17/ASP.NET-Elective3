@@ -102,8 +102,9 @@ public partial class Registration : System.Web.UI.Page
 
                 else
                 {
-                    SqlCommand sqlCmd = new SqlCommand("UserAddOrEdit", sqlCon);
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    string query = "INSERT INTO FinalTable (FirstName,LastName,Contact,Username,Email,Password,Type, Verified) VALUES(@FirstName, @LastName, @Contact, @Username, @Email, @Password, @Type, 'No')";
+                    SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                    //sqlCmd.CommandType = CommandType.StoredProcedure;
                     sqlCmd.Parameters.AddWithValue("@UserID", Convert.ToInt32(hfUserID.Value == "" ? "0" : hfUserID.Value));
                     sqlCmd.Parameters.AddWithValue("@FirstName", TBfn.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@LastName", TBln.Text.Trim());

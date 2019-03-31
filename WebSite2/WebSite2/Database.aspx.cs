@@ -113,7 +113,7 @@ public partial class Database : System.Web.UI.Page
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
                 {
                     sqlCon.Open();
-                    string query = "INSERT INTO FinalTable (FirstName,LastName,Username,Contact,Email,Type,Verified) VALUES (@FirstName,@LastName,@Username,@Contact,@Email,@Type,@Verified)";
+                    string query = "INSERT INTO FinalTable (FirstName,LastName,Username,Contact,Email,Password,Type,Verified) VALUES (@FirstName,@LastName,@Username,@Contact,@Email,'reset',@Type,@Verified)";
                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
 
                     sqlCmd.Parameters.AddWithValue("@FirstName", (gvUsers.FooterRow.FindControl("txtFirstNameFooter") as TextBox).Text.Trim());
