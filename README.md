@@ -3,6 +3,11 @@
 Web App with Login / Register / Admin Privileges / Database / Security Features (One time password using mobile or email verification) using Asp.NET Framework, Visual studio 2017 (C#, HTML, CSS) and SQL server 2014 
 
 
+Update: stored procedure removed.
+
+
+
+
 ![image](https://user-images.githubusercontent.com/28699887/54080646-9858ef80-432f-11e9-93da-c40bb5d5d085.png)
 
 <h3> REGISTRATION PAGE </h3>  
@@ -33,7 +38,7 @@ Click username you want to view. Under Tools, X icon pends the specific account,
 
 ![image](https://user-images.githubusercontent.com/28699887/54080687-875cae00-4330-11e9-9fc4-d7aa508a9314.png)
 
-<h3> STORED PROCEDURES USED </h3>
+<h3> STORED PROCEDURES </h3>
 
 ![image](https://user-images.githubusercontent.com/28699887/55277923-7d7f0700-5340-11e9-959b-4fdc2aec585d.png)
 
